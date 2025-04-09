@@ -13,6 +13,17 @@ export default class Card {
 		const card = document.createElement("div");
 		card.classList.add("bingo__card");
 
+		const bingoInterface = document.createElement("div");
+		bingoInterface.classList.add("bingo__interface");
+
+		const icons = ["fa-trash", "fa-pen-to-square"];
+		for (const icon of icons) {
+			const interfaceIcon = document.createElement("i");
+			interfaceIcon.classList.add("bingo__interface-icon", "fa-solid", icon);
+
+			bingoInterface.appendChild(interfaceIcon);
+		}
+
 		const title = document.createElement("div");
 		title.classList.add("bingo__title");
 
@@ -42,13 +53,13 @@ export default class Card {
 
 			for (const number of numbers) {
 				const cell = document.createElement("div");
-                cell.classList.add("bingo__cell");
+				cell.classList.add("bingo__cell");
 
-                if (number === "FREE") {
-                    cell.classList.add("bingo__cell--center");
-                } else {
-                    cell.innerText = number.toString();
-                }
+				if (number === "FREE") {
+					cell.classList.add("bingo__cell--center");
+				} else {
+					cell.innerText = number.toString();
+				}
 
 				column.appendChild(cell);
 			}
@@ -56,7 +67,7 @@ export default class Card {
 			grid.appendChild(column);
 		}
 
-		card.append(title, grid);
+		card.append(bingoInterface, title, grid);
 		return card;
 	}
 }
