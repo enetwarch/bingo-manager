@@ -1,0 +1,157 @@
+@font-face {
+	font-family: "Arial Rounded MT Bold";
+	src: url("/arialroundedmtbold.ttf");
+}
+
+:root {
+	--dark-1: hsl(0, 0%, 10%);
+	--dark-2: hsl(0, 0%, 20%);
+	--dark-3: hsl(0, 0%, 30%);
+	--light-1: hsl(0, 0%, 90%);
+	--light-2: hsl(0, 0%, 80%);
+	--light-3: hsl(0, 0%, 70%);
+	--blue: #608cab;
+	--green: #72a079;
+	--red: #bb4948;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	font-family: "Arial Rounded MT Bold", sans-serif;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	align-items: center;
+	background-color: var(--dark-1);
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	min-height: 100vh;
+	padding: 4rem;
+	transition: background-color 0.25s;
+	width: 100%;
+}
+
+.interface {
+	background-color: var(--dark-2);
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 2rem;
+}
+
+.interface__container {
+	display: flex;
+	gap: 1rem;
+}
+
+.interface__header {
+	align-items: center;
+	color: var(--light-1);
+	display: flex;
+	font-size: 3rem;
+	height: 4rem;
+	justify-content: center;
+	width: 4rem;
+}
+
+.interface__cell {
+	align-items: center;
+	background-color: var(--dark-3);
+	border-radius: 0.5rem;
+	color: var(--light-1);
+	display: flex;
+	font-size: 2rem;
+	height: 4rem;
+	justify-content: center;
+	padding: 1rem;
+	transition: opacity 0.25s;
+	width: 4rem;
+}
+
+.interface__cell:hover {
+	cursor: pointer;
+}
+
+.interface__cell:active {
+	opacity: 0.9;
+}
+
+.bingo {
+	display: grid;
+	gap: 4rem;
+	grid-auto-rows: 33rem;
+	grid-template-columns: repeat(auto-fit, 28rem);
+	justify-content: center;
+	width: 100%;
+}
+
+.bingo__card {
+	display: flex;
+	padding: 2rem;
+	background-color: var(--dark-2);
+	border-radius: 0.5rem;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.bingo__title {
+	height: 4rem;
+	display: flex;
+	gap: 1rem;
+}
+
+.bingo__header {
+	color: var(--light-1);
+	font-size: 3rem;
+	width: 4rem;
+	height: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bingo__grid {
+	display: flex;
+	gap: 1rem;
+}
+
+.bingo__column {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.bingo__cell {
+	display: flex;
+	height: 4rem;
+	width: 4rem;
+	color: var(--light-1);
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	background-color: var(--dark-3);
+	border-radius: 0.5rem;
+	transition: opacity 0.25s;
+}
+
+.bingo__cell:hover {
+	cursor: pointer;
+}
+
+.bingo__cell:active {
+	opacity: 0.9;
+}
+
+.bingo__cell--center {
+	font-size: 1rem;
+}
+
+.bingo__cell--center::after {
+	content: "FREE";
+}
